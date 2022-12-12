@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Luiza = exports.Zeka = exports.Julia = exports.Emy = exports.Niendol = exports.Pick = void 0;
+const Armas_1 = require("../RespositorioDeArmas/Armas");
+const ModeloDePersonagem_1 = require("../../ModelsTs/ModeloDePersonagem");
+exports.Pick = new ModeloDePersonagem_1.Personagem('Breno', 'PickBoy', 'humano', 'barbaro', 1, 0, 15, 16, 14, 6, 5, 10, Armas_1.EspadaLonga);
+exports.Niendol = new ModeloDePersonagem_1.Personagem('Gabriel', 'Niendol', 'humano', 'barbaro', 1, 0, 10, 12, 14, 15, 6, 10, Armas_1.Machado);
+exports.Emy = new ModeloDePersonagem_1.Personagem('Emilly', 'Emy', 'humano', 'druid', 1, 0, 10, 16, 14, 6, 6, 10, Armas_1.EspadaLonga);
+exports.Julia = new ModeloDePersonagem_1.Personagem('Julia', 'Juli', 'humano', 'bardo', 1, 0, 8, 16, 6, 12, 5, 15, Armas_1.Adaga);
+exports.Zeka = new ModeloDePersonagem_1.Personagem('José', 'Zekinha', 'humano', 'barbaro', 1, 0, 10, 16, 6, 12, 5, 15, Armas_1.Adaga);
+exports.Luiza = new ModeloDePersonagem_1.Personagem('Luiza', 'LuizaAD', 'humano', 'barbaro', 1, 0, 15, 16, 14, 6, 5, 10, Armas_1.Machado);
