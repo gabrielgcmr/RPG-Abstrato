@@ -6,7 +6,7 @@ routes.get('/', (req, res) => {
     res.send('Hello World!')
   })
 
-routes.post('/personagem',(req,res)=>{
+routes.post('/personagem',(req,res) => {
   
 })
 

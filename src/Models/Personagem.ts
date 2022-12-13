@@ -84,57 +84,57 @@ const personagemSchema = new mongoose.Schema<IPersonagem>({
     //
     modforca: {
         type: Number,
-        required:true
+        
     },
     moddestreza: {
         type: Number,
-        required:true
+        
     },
     modconstituicao: {
         type: Number,
-        required:true
+        
     },
     modinteligencia: {
         type: Number,
-        required:true
+
     },
     modsabedoria: {
         type: Number,
-        required:true
+        
     },
     modcarisma: {
         type: Number,
-        required:true
+
     },
     //
     PontosDeVida: {
         type: Number,
-        required:true
+
     },
     ClasseDeArmadura: {
         type: Number,
-        required:true
+    
     }
 });
 
 personagemSchema.pre('save',function(next) {
     if (this.classe == "barbaro") {
-        this.PontosDeVida = 12;
+        this.PontosDeVida = this.nivel * 12;
     }
     else if (this.classe == "bardo") {
-        this.PontosDeVida = 8;
+       this.PontosDeVida = this.nivel * 8;
     }
     else if (this.classe == "clerigo") {
-        this.PontosDeVida = 8;
+       this.PontosDeVida = this.nivel * 8;
     }
     else if (this.classe == "druid") {
-        this.PontosDeVida = 12;
+       this.PontosDeVida = this.nivel * 12;
     }
     else if (this.classe == "lutador") {
-        this.PontosDeVida = 10;
+       this.PontosDeVida = this.nivel * 10;
     }
     else {
-        this.PontosDeVida = 6;
+       this.PontosDeVida = this.nivel * 6;
     }
     next()
 })
@@ -163,8 +163,7 @@ personagemSchema.pre('save',function(next) {
 }) 
 
 personagemSchema.pre('save',function(next){
-     var classeDeArmadura = 10 + this.moddestreza
-     this.ClasseDeArmadura = classeDeArmadura
+      this.ClasseDeArmadura = 10 + this.moddestreza
      next()
 })
 

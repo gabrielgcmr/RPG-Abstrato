@@ -1,9 +1,11 @@
 import {AranhaGigante, Esqueleto, Lobo} from './repositorios/repositoriosDeMonstros/Monstros'
-import {Niendol, Pick,Emy, Julia,Zeka,Luiza,Bibi} from './repositorios/repositorioDePersonagem/Personagens'
-import { IPersonagem, Personagem } from './ModelsTs/ModeloDePersonagem'
+import {Niendol,Emy, Julia,Zeka,Luiza,Bibi} from './repositorios/repositorioDePersonagem/Personagens'
+import { EspadaLonga } from './repositorios/RespositorioDeArmas/Armas'
+import { IPersonagem} from './ModelsTs/ModeloDePersonagem'
 import { Ataque } from './scripts/ataque'
 import { Monstro,IMonstro } from './ModelsTs/ModeloDeMonstros'
 import { Turno } from './scripts/Turno'
+
 
 
 
@@ -27,7 +29,7 @@ import { Turno } from './scripts/Turno'
 //})
 //console.log(ordemDeAtaque2)
 //console.log(iniciativaTime1(Pick,Emy))
-console.log(Turno(Bibi,Pick,Niendol,Esqueleto,Lobo,AranhaGigante))
+//console.log(Turno(Bibi,Pick,Niendol,Emy,Luiza,Esqueleto,Lobo,AranhaGigante))
 //console.log(ordem)
 //console.log(Pick.Vivo)
 

@@ -11,7 +11,6 @@ export default async function connectToMongoDB(){
     } else{
         console.log('Base de dados não conectada')
     }
-    console.log(mongoURI)
 }
 
 export const closeMongoDB = (): Promise<void> => mongoose.connection.close()
