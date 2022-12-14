@@ -3,12 +3,9 @@ import { Router } from "express"
 const routes = Router()
 
 routes.get('/', (req, res) => {
-    res.send('Hello World!')
+  res.json({message: "Hellow Word!"});
   })
 
-routes.post('/personagem',(req,res) => {
-  
-})
 
 
 export default routes

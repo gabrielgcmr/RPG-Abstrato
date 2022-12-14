@@ -1,9 +1,9 @@
 import {AranhaGigante, Esqueleto, Lobo} from './repositorios/repositoriosDeMonstros/Monstros'
 import {Niendol,Emy, Julia,Zeka,Luiza,Bibi} from './repositorios/repositorioDePersonagem/Personagens'
 import { EspadaLonga } from './repositorios/RespositorioDeArmas/Armas'
-import { IPersonagem} from './ModelsTs/ModeloDePersonagem'
+import { IPersonagem} from './Outros/ModelsTs/ModeloDePersonagem'
 import { Ataque } from './scripts/ataque'
-import { Monstro,IMonstro } from './ModelsTs/ModeloDeMonstros'
+import { Monstro,IMonstro } from './Outros/ModelsTs/ModeloDeMonstros'
 import { Turno } from './scripts/Turno'
 
 

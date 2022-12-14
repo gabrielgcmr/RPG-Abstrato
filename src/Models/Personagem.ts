@@ -1,5 +1,5 @@
 import {D4,D8,D10,D20 } from '../scripts/dados'
-import {IArma} from '../ModelsTs/ModelosDeArmas'
+import {IArma} from '../Outros/ModelsTs/ModelosDeArmas'
 import mongoose from 'mongoose'
 
 export interface IPersonagem {

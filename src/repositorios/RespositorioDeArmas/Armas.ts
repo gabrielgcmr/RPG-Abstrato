@@ -1,4 +1,4 @@
-import { Arma } from "../../ModelsTs/ModelosDeArmas"
+import { Arma } from "../../Outros/ModelsTs/ModelosDeArmas"
 // Armas-----------------------------------------------------------------
 export var EspadaLonga = new Arma('Espada Longa', 15, 'corpo_a_corpo')
 export var Machado = new Arma('Machado', 13, 'corpo_a_corpo')

@@ -1,5 +1,5 @@
 import { EspadaLonga,Machado,ArcoCurto,Adaga } from "../RespositorioDeArmas/Armas";
-import { Personagem } from "../../ModelsTs/ModeloDePersonagem";
+import { Personagem } from "../../Outros/ModelsTs/ModeloDePersonagem";
 
 
 export var Pick = new Personagem('Breno','PickBoy','humano','barbaro', 1,0,15,16,14,6,5,10,EspadaLonga);

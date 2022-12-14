@@ -1,5 +1,5 @@
 import { iniciativa } from './iniciação'
-import {IPersonagem, Personagem} from '../ModelsTs/ModeloDePersonagem'
+import {IPersonagem, Personagem} from './ModelsTs/ModeloDePersonagem'
 import {Ataque} from '../scripts/ataque'
 import { iniciativa3 } from './iniciativa2'
 

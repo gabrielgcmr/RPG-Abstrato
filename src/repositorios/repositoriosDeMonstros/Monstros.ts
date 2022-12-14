@@ -1,4 +1,4 @@
-import { Monstro } from "../../ModelsTs/ModeloDeMonstros"
+import { Monstro } from "../../Outros/ModelsTs/ModeloDeMonstros"
 import { EspadaLonga,Mordida } from "../RespositorioDeArmas/Armas"
 
 // Monstros--------------------------------------------------------------- 

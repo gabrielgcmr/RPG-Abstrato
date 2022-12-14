@@ -1,5 +1,5 @@
 import {D4,D8,D10,D20 } from '../scripts/dados'
-import {IPersonagem, Personagem} from '../ModelsTs/ModeloDePersonagem'
+import {IPersonagem, Personagem} from './ModelsTs/ModeloDePersonagem'
 import {Teste} from './iniciação'
 import { Julia, Niendol, Pick } from '../repositorios/repositorioDePersonagem/Personagens';
 

@@ -1,6 +1,6 @@
 import  Express, { Router }  from "express"
 import routes from "./routes/routes"
-import connectToMongoDB from './database/databaseconfig'
+import connectToMongoDB from './config/database/databaseconfig'
 import { savePerson } from "./test/testes2"
 
 
