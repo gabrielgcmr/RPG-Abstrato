@@ -1,7 +1,7 @@
 import {IArma} from '../Outros/ModelsTs/ModelosDeArmas'
 import mongoose from 'mongoose'
 
-export interface IPersonagem {
+export interface ICharacter {
     playerName:string;
     name:string;
     race:string;
@@ -21,7 +21,7 @@ export interface IPersonagem {
     weapon: IArma | null
 }
 
-const personagemSchema = new mongoose.Schema<IPersonagem>({
+const characterSchema = new mongoose.Schema<ICharacter>({
     
     playerName: {
         type: String,
@@ -165,6 +165,6 @@ personagemSchema.pre('save',function(next){
 })
 */
 
-const Personagem = mongoose.model <IPersonagem>('Personagem',personagemSchema);
+const Character = mongoose.model <ICharacter>('Character',characterSchema);
 
-export default Personagem
+export default Character
