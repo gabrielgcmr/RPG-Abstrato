@@ -87,13 +87,13 @@ const characterSchema = new mongoose.Schema<ICharacter>({
         type:Object
     }
 });
-personagemSchema.pre('save',function(next){
+characterSchema.pre('save',function(next){
     if(this.race == "Anão"){
         this.constitution == +2
     }
 })
 
-personagemSchema.pre('save',function(next) {
+characterSchema.pre('save',function(next) {
     if (this.class == "barbarian") {
         this.hit_points = this.level * 12;
     }
