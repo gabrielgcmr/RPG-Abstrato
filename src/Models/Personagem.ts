@@ -1,4 +1,3 @@
-import {D4,D8,D10,D20 } from '../scripts/dados'
 import {IArma} from '../Outros/ModelsTs/ModelosDeArmas'
 import mongoose from 'mongoose'
 
@@ -124,17 +123,32 @@ personagemSchema.pre('save',function(next) {
     else if (this.classe == "bardo") {
        this.PontosDeVida = this.nivel * 8;
     }
-    else if (this.classe == "clerigo") {
+    else if (this.classe == "bruxo") {
        this.PontosDeVida = this.nivel * 8;
     }
-    else if (this.classe == "druid") {
-       this.PontosDeVida = this.nivel * 12;
+    else if (this.classe == "clérigo") {
+       this.PontosDeVida = this.nivel * 8;
     }
-    else if (this.classe == "lutador") {
+    else if (this.classe == "druida") {
+       this.PontosDeVida = this.nivel * 8;
+    }
+    else if (this.classe == "feiticeiro") {
+        this.PontosDeVida = this.nivel * 6;
+    }
+    else if (this.classe == "guerreiro") {
        this.PontosDeVida = this.nivel * 10;
     }
-    else {
-       this.PontosDeVida = this.nivel * 6;
+    else if (this.classe == "ladino") {
+        this.PontosDeVida = this.nivel * 8;
+    }
+    else if (this.classe == "monge") {
+        this.PontosDeVida = this.nivel * 10;
+    }
+    else if (this.classe == "paladino") {
+        this.PontosDeVida = this.nivel * 10;
+    }
+    else if (this.classe == "patrulheiro"){
+       this.PontosDeVida = this.nivel * 10;
     }
     next()
 })
