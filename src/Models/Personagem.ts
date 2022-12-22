@@ -1,157 +1,140 @@
 import {IArma} from '../Outros/ModelsTs/ModelosDeArmas'
 import mongoose from 'mongoose'
 
-export interface IPersonagem {
-    nomeDoJogador:string;
-    nome:string;
-    raca:string;
-    classe:string;
-    nivel:number;
-    experiencia:number;
+export interface ICharacter {
+    playerName:string;
+    name:string;
+    race:string;
+    class:string;
+    level:number;
+    experience:number;
     //
-    forca:number;
-    destreza:number;
-    constituicao:number;
-    inteligencia:number;
-    sabedoria:number;
-    carisma:number;
+    strength:number;
+    dextery:number;
+    constitution:number;
+    intelligence:number;
+    wisdom:number;
+    charisma:number;
     //
-    modforca:number;
-    moddestreza:number;
-    modconstituicao:number;
-    modinteligencia:number;
-    modsabedoria:number;
-    modcarisma:number;
-    //
-    PontosDeVida:number;
-    ClasseDeArmadura:number;
-    Arma: IArma;
+    hit_points:number;
+    armor_class:number;
+    weapon: IArma | null
 }
 
-const personagemSchema = new mongoose.Schema<IPersonagem>({
+const characterSchema = new mongoose.Schema<ICharacter>({
     
-    nomeDoJogador: {
+    playerName: {
         type: String,
         required:true
     },
-    nome: {
+    name: {
         type: String,
         required:true,
         unique: true
     },
-    raca: {
+    race: {
         type: String,
         required:true
     },
-    classe: {
+    class: {
         type: String,
         required:true
     },
-    nivel: {
+    level: {
         type: Number,
         required:true
     },
-    experiencia: {
+    experience: {
         type: Number,
         required:true
     },
     // 
-    forca: {
+    strength: {
         type: Number,
         required:true
     },
-    destreza: {
+    dextery: {
         type: Number,
         required:true
     },
-    constituicao: {
+    constitution: {
         type: Number,
         required:true
     },
-    inteligencia: {
+    intelligence: {
         type: Number,
         required:true
     },
-    sabedoria: {
+    wisdom: {
         type: Number,
         required:true
     },
-    carisma: {
+    charisma: {
         type: Number,
         required:true
     },
     //
-    modforca: {
-        type: Number,
-        
-    },
-    moddestreza: {
-        type: Number,
-        
-    },
-    modconstituicao: {
-        type: Number,
-        
-    },
-    modinteligencia: {
-        type: Number,
-
-    },
-    modsabedoria: {
-        type: Number,
-        
-    },
-    modcarisma: {
-        type: Number,
-
-    },
     //
-    PontosDeVida: {
+    hit_points: {
         type: Number,
 
     },
-    ClasseDeArmadura: {
+    armor_class: {
         type: Number,
     
+    },
+    weapon:{
+        type:Object
     }
 });
+characterSchema.pre('save',function(next){
+    if(this.race == "Anão"){
+        this.constitution == +2
+    }
+})
 
-personagemSchema.pre('save',function(next) {
-    if (this.classe == "barbaro") {
-        this.PontosDeVida = this.nivel * 12;
+characterSchema.pre('save',function(next) {
+    if (this.class == "barbarian") {
+        this.hit_points = this.level * 12;
     }
-    else if (this.classe == "bardo") {
-       this.PontosDeVida = this.nivel * 8;
+    else if (this.class == "bard") {
+       this.hit_points = this.level * 8;
     }
-    else if (this.classe == "bruxo") {
-       this.PontosDeVida = this.nivel * 8;
+    else if (this.class == "cleric") {
+       this.hit_points = this.level * 8;
     }
-    else if (this.classe == "clérigo") {
-       this.PontosDeVida = this.nivel * 8;
+    else if (this.class == "druid") {
+       this.hit_points = this.level * 8;
     }
-    else if (this.classe == "druida") {
-       this.PontosDeVida = this.nivel * 8;
+    else if (this.class == "fighter") {
+       this.hit_points = this.level * 10;
     }
-    else if (this.classe == "feiticeiro") {
-        this.PontosDeVida = this.nivel * 6;
+    else if (this.class == "monk") {
+        this.hit_points = this.level * 8;
     }
-    else if (this.classe == "guerreiro") {
-       this.PontosDeVida = this.nivel * 10;
+    else if (this.class == "paladin") {
+       this.hit_points = this.level * 10;
     }
-    else if (this.classe == "ladino") {
-        this.PontosDeVida = this.nivel * 8;
+    else if (this.class == "ranger") {
+        this.hit_points = this.level * 10;
     }
-    else if (this.classe == "monge") {
-        this.PontosDeVida = this.nivel * 10;
+    else if (this.class == "rogue") {
+        this.hit_points = this.level * 8;
     }
-    else if (this.classe == "paladino") {
-        this.PontosDeVida = this.nivel * 10;
+    else if (this.class == "sorcerer") {
+        this.hit_points = this.level * 6;
     }
-    else if (this.classe == "patrulheiro"){
-       this.PontosDeVida = this.nivel * 10;
+    else if (this.class == "warlock"){
+       this.hit_points = this.level * 8;
+    }
+    else if (this.class == "wizard"){
+        this.hit_points = this.level * 6;
     }
     next()
 })
+
+/* 
+Não faz sentido salvar isso no banco de dados.
 
 personagemSchema.pre('save',function(next) {
 //------------------------------------------------------------------------
@@ -177,11 +160,11 @@ personagemSchema.pre('save',function(next) {
 }) 
 
 personagemSchema.pre('save',function(next){
-      this.ClasseDeArmadura = 10 + this.moddestreza
+      this.armor_class = 10 + this.moddestreza
      next()
 })
+*/
 
+const Character = mongoose.model <ICharacter>('Character',characterSchema);
 
-const Personagem = mongoose.model <IPersonagem>('Personagem',personagemSchema);
-
-export default Personagem
+export default Character
