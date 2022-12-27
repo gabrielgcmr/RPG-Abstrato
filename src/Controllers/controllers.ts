@@ -2,7 +2,7 @@ import {Request,Response } from "express"
 import Character, { ICharacter } from "../Models/character";
 //------------------------------------------------------------------------------------//
 //========================|Pegar todos os Personagens do banco|===========================================//
-const getAllPerson = (req:Request, res:Response) => {
+const getAllCharacters = (req:Request, res:Response) => {
     Character.find({}, (err:Error,data:ICharacter) => {
         if(err) {                                                                   //aprovado!
             return res.json({Error:err});
@@ -12,7 +12,7 @@ const getAllPerson = (req:Request, res:Response) => {
 };
 //------------------------------------------------------------------------------------//
 //========================|Criar um novo personagem|===========================================//
-const newPerson = (req:Request,res:Response) => {
+const newCharacter = (req:Request,res:Response) => {
 Character.findOne({nome: req.body.nome }, (err:Error, data:ICharacter) => {
         if(!data) {
             const newPerson = new Character(req.body)                                  //aprovado!
@@ -28,7 +28,7 @@ Character.findOne({nome: req.body.nome }, (err:Error, data:ICharacter) => {
 };
 //------------------------------------------------------------------------------------//
 //========================|!DELETAR TODOS OS PERSONAGENS!|===========================================//
-const deleteAllPerson = (req:Request, res:Response) => {
+const deleteAllCharacter = (req:Request, res:Response) => {
     Character.deleteMany({}, err => {
         if(err) {
           return res.json({message: "Complete delete failed"});                    //aprovado!
@@ -38,7 +38,7 @@ const deleteAllPerson = (req:Request, res:Response) => {
 };
 //------------------------------------------------------------------------------------//
 //========================|Pegar uma pesonagem pelo nome|===========================================//
-const getOnePerson = (req:Request, res:Response) => {
+const getOneCharacter = (req:Request, res:Response) => {
     let nome = req.params.nome; 
 
     Character.findOne({nome:nome}, (err:Error, data:ICharacter) => {             //aprovado!
@@ -52,7 +52,7 @@ const getOnePerson = (req:Request, res:Response) => {
 };
 //------------------------------------------------------------------------------------//
 //========================|Deleta um personagem pelo nome|===========================================//
-const deleteOnePerson = (req:Request, res:Response) => {
+const deleteOneCharacter = (req:Request, res:Response) => {
     const nome = req.params.nome
 
      Character.deleteOne({nome:nome}, (err:Error, data:ICharacter) => {
@@ -72,4 +72,4 @@ const deleteOnePerson = (req:Request, res:Response) => {
 
 
 //------------------------------------------------------------------------------------//
-export default {getAllPerson, newPerson,deleteAllPerson,getOnePerson,deleteOnePerson} 
+export default {getAllCharacters, newCharacter,deleteAllCharacter,getOneCharacter,deleteOneCharacter} 
