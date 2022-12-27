@@ -12,12 +12,12 @@ routes.get('/',(req:Request, res:Response) =>{
     res.json({message:`Seja bem vindo novamente ${Deus}`})
 })
 //============================|(Rotas)|=====================================//
-routes.get('/personagens', controllerRoutes.getAllPerson);
-routes.post('/create', upload.none(), controllerRoutes.newPerson);
-routes.delete('/deleteall', controllerRoutes.deleteAllPerson);
+routes.get('/personagens', controllerRoutes.getAllCharacter);
+routes.post('/create', upload.none(), controllerRoutes.newCharacter);
+routes.delete('/deleteall', controllerRoutes.deleteAllCharacter);
 
- routes.get('/personagem/:nome', controllerRoutes.getOnePerson);
- routes.delete('/delete/:nome', controllerRoutes.deleteOnePerson);
-//  routes.put('/personagem/:nome', controllerRoutes.updatePerson);
+ routes.get('/personagem/:nome', controllerRoutes.getOneCharacter);
+ routes.delete('/delete/:nome', controllerRoutes.deleteOneCharacter);
+//  routes.put('/personagem/:nome', controllerRoutes.updateCharacter);
 //--------------------------------------------------------------------------//
 export default routes     // exportando rotas por padrão.
