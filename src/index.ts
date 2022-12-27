@@ -6,6 +6,14 @@ import cors from 'cors'
 
 connectToMongoDB()
 const app = Express()
+app.use(express.json()) // Pedido pra q o express aceite "Json"
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Methods", "GET,PUT,POST")
+    app.use(cors())
+    next()
+})
+
 
 app.use(routes)
 

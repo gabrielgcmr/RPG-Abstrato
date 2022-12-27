@@ -19,5 +19,6 @@ routes.delete('/deleteall', characterController.deleteAllCharacter);
  routes.get('/personagem/:nome', characterController.getOneCharacter);
  routes.delete('/delete/:nome', characterController.deleteOneCharacter);
 //  routes.put('/personagem/:nome', controllerRoutes.updateCharacter);
+
 //--------------------------------------------------------------------------//
 export default routes     // exportando rotas por padrão.
