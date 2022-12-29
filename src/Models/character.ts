@@ -1,5 +1,5 @@
 import {IArma} from '../Outros/ModelsTs/ModelosDeArmas'
-import mongoose from 'mongoose'
+import mongoose from "mongoose"
 
 export interface ICharacter {
     playerName:string;
