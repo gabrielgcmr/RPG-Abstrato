@@ -15,8 +15,8 @@ export const getAllCharacters = (req:Request, res:Response) => {
 export const newCharacter = (req:Request,res:Response) => {
 Character.findOne({nome: req.body.nome }, (err:Error, data:ICharacter) => {
         if(!data) {
-            const newPerson = new Character(req.body)                                  //aprovado!
-            newPerson.save((err,data) => {
+            const newCharacter = new Character(req.body)                                  //aprovado!
+            newCharacter.save((err,data) => {
                 if(err) return res.json({Error: err});
                 return res.json(Character)
             })

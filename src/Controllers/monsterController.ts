@@ -15,8 +15,8 @@ export const getAllCharacters = (req:Request, res:Response) => {
 export const newCharacter = (req:Request,res:Response) => {
 Monster.findOne({nome: req.body.nome }, (err:Error, data:IMonster) => {
         if(!data) {
-            const newPerson = new Monster(req.body)                                  //aprovado!
-            newPerson.save((err,data) => {
+            const newMonster = new Monster(req.body)                                  //aprovado!
+            newMonster.save((err,data) => {
                 if(err) return res.json({Error: err});
                 return res.json(Monster)
             })
